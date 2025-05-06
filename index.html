@@ -6,20 +6,30 @@
     <title>Pizzeria Neapol</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
 </head>
 <body>
     <div class="side-decoration left-decoration"></div>
     <div class="side-decoration right-decoration"></div>
     <div class="container">
         <header>
-            <h1>Pizzeria Neapol</h1>
+            <a href="index.html" class="logo-link">
+                <h1>Pizzeria Neapol</h1>
             <a href="profile.html">
-            <button  class="user-menu-button"> 
-                <i class="fas fa-user-circle"></i>
-                <span id="userName">Jan Kowalski</span>
-                </a>
-                
-            </button>
+                <div class="header-buttons">
+                    <div class="user-menu">
+                        <button class="user-menu-button">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="userName">Profile</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="user-dropdown">
+                            <a href="profile.html"><i class="fas fa-user"></i> Mój profil</a>
+                            <a href="orders.html"><i class="fas fa-list"></i> Moje zamówienia</a>
+                            <a href="addresses.html"><i class="fas fa-map-marker-alt"></i> Moje adresy</a>
+                            <a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Wyloguj</a>
+                        </div>
+                    </div>
             <div class="cart-icon-container">
                 <div id="cart-icon" class="cart-icon">
                     <i class="fas fa-shopping-cart"></i>
@@ -66,5 +76,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>

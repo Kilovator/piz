@@ -1,4 +1,3 @@
-/* Auth Styles */
 :root {
   --primary-color: #ff6b6b;
   --primary-dark: #ff5252;
@@ -365,7 +364,6 @@ body {
   color: var(--primary-color);
 }
 
-/* Profile Page Styles */
 .profile-container {
   display: flex;
   gap: 30px;

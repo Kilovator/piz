@@ -1,4 +1,3 @@
-// Pizza data
 const pizzas = [
   {
     id: 1,
@@ -8,6 +7,11 @@ const pizzas = [
     image:
       "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     type: "pizza",
+    sizes: [
+      { name: "Mała (25cm)", priceMultiplier: 0.8 },
+      { name: "Średnia (32cm)", priceMultiplier: 1 },
+      { name: "Duża (42cm)", priceMultiplier: 1.3 },
+    ],
   },
   {
     id: 2,
@@ -17,6 +21,11 @@ const pizzas = [
     image:
       "https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     type: "pizza",
+    sizes: [
+      { name: "Mała (25cm)", priceMultiplier: 0.8 },
+      { name: "Średnia (32cm)", priceMultiplier: 1 },
+      { name: "Duża (42cm)", priceMultiplier: 1.3 },
+    ],
   },
   {
     id: 3,
@@ -26,6 +35,11 @@ const pizzas = [
     image:
       "https://images.unsplash.com/photo-1604917877934-07d8d248d396?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     type: "pizza",
+    sizes: [
+      { name: "Mała (25cm)", priceMultiplier: 0.8 },
+      { name: "Średnia (32cm)", priceMultiplier: 1 },
+      { name: "Duża (42cm)", priceMultiplier: 1.3 },
+    ],
   },
   {
     id: 4,
@@ -35,6 +49,11 @@ const pizzas = [
     image:
       "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     type: "pizza",
+    sizes: [
+      { name: "Mała (25cm)", priceMultiplier: 0.8 },
+      { name: "Średnia (32cm)", priceMultiplier: 1 },
+      { name: "Duża (42cm)", priceMultiplier: 1.3 },
+    ],
   },
   {
     id: 5,
@@ -44,6 +63,11 @@ const pizzas = [
     image:
       "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     type: "pizza",
+    sizes: [
+      { name: "Mała (25cm)", priceMultiplier: 0.8 },
+      { name: "Średnia (32cm)", priceMultiplier: 1 },
+      { name: "Duża (42cm)", priceMultiplier: 1.3 },
+    ],
   },
   {
     id: 6,
@@ -53,6 +77,11 @@ const pizzas = [
     image:
       "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     type: "pizza",
+    sizes: [
+      { name: "Mała (25cm)", priceMultiplier: 0.8 },
+      { name: "Średnia (32cm)", priceMultiplier: 1 },
+      { name: "Duża (42cm)", priceMultiplier: 1.3 },
+    ],
   },
   {
     id: 7,
@@ -61,6 +90,11 @@ const pizzas = [
     price: 37.99,
     image: "https://www.pizzatales.it/wp50/wp-content/uploads/2021/10/la-pizza-alla-carbonara.jpg",
     type: "pizza",
+    sizes: [
+      { name: "Mała (25cm)", priceMultiplier: 0.8 },
+      { name: "Średnia (32cm)", priceMultiplier: 1 },
+      { name: "Duża (42cm)", priceMultiplier: 1.3 },
+    ],
   },
   {
     id: 8,
@@ -69,6 +103,11 @@ const pizzas = [
     price: 38.99,
     image: "https://sushiholl.com.ua/wp-content/uploads/pizza-suprema.jpg",
     type: "pizza",
+    sizes: [
+      { name: "Mała (25cm)", priceMultiplier: 0.8 },
+      { name: "Średnia (32cm)", priceMultiplier: 1 },
+      { name: "Duża (42cm)", priceMultiplier: 1.3 },
+    ],
   },
   {
     id: 9,
@@ -77,10 +116,14 @@ const pizzas = [
     price: 36.99,
     image: "https://xn----8sbtijjjbaolrt0e.com/image/cache/catalog/photo_2020-09-08_09-28-24-637x637.jpg",
     type: "pizza",
+    sizes: [
+      { name: "Mała (25cm)", priceMultiplier: 0.8 },
+      { name: "Średnia (32cm)", priceMultiplier: 1 },
+      { name: "Duża (42cm)", priceMultiplier: 1.3 },
+    ],
   },
 ]
 
-// Drinks data
 const drinks = [
   {
     id: 1,
@@ -138,7 +181,6 @@ const drinks = [
   },
 ]
 
-// Appetizers data
 const appetizers = [
   {
     id: 1,
@@ -194,8 +236,6 @@ const appetizers = [
     type: "appetizer",
   },
 ]
-
-// DOM elements
 const pizzaMenu = document.getElementById("pizza-menu")
 const drinksMenu = document.getElementById("drinks-menu")
 const appetizersMenu = document.getElementById("appetizers-menu")
@@ -209,10 +249,8 @@ const checkoutBtn = document.getElementById("checkout-btn")
 const tabs = document.querySelectorAll(".tab")
 const tabContents = document.querySelectorAll(".tab-content")
 
-// Cart data
 let cart = []
 
-// Display items in menu
 function displayItems(items, container, itemType) {
   container.innerHTML = ""
 
@@ -220,21 +258,68 @@ function displayItems(items, container, itemType) {
     const itemElement = document.createElement("div")
     itemElement.classList.add(`${itemType}-item`)
 
-    itemElement.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" class="${itemType}-img">
-            <div class="${itemType}-info">
-                <h3>${item.name}</h3>
-                <p>${item.description}</p>
-                <div class="${itemType}-price">${item.price.toFixed(2)} zł</div>
-                <button class="add-to-cart" data-id="${item.id}" data-type="${item.type}">Dodać do koszyka</button>
-            </div>
-        `
+    // Create the basic item HTML
+    let itemHTML = `
+      <img src="${item.image}" alt="${item.name}" class="${itemType}-img">
+      <div class="${itemType}-info">
+        <h3>${item.name}</h3>
+        <p>${item.description}</p>
+    `
 
+    // Add size selector for pizzas
+    if (itemType === "pizza" && item.sizes) {
+      itemHTML += `
+        <div class="size-selector">
+          <label for="size-${item.id}">Rozmiar:</label>
+          <select id="size-${item.id}" class="size-select" data-id="${item.id}">
+      `
+
+      item.sizes.forEach((size, index) => {
+        const sizePrice = (item.price * size.priceMultiplier).toFixed(2)
+        itemHTML += `<option value="${index}" ${index === 1 ? "selected" : ""}>${size.name} - ${sizePrice} zł</option>`
+      })
+
+      itemHTML += `
+          </select>
+        </div>
+        <div class="${itemType}-price">${(item.price * item.sizes[1].priceMultiplier).toFixed(2)} zł</div>
+      `
+    } else {
+      itemHTML += `<div class="${itemType}-price">${item.price.toFixed(2)} zł</div>`
+    }
+
+    // Add the add to cart button
+    itemHTML += `<button class="add-to-cart" data-id="${item.id}" data-type="${item.type}">Dodać do koszyka</button>`
+    itemHTML += `</div>`
+
+    itemElement.innerHTML = itemHTML
     container.appendChild(itemElement)
+
+    // Add event listeners for size selectors
+    if (itemType === "pizza") {
+      const sizeSelect = itemElement.querySelector(`.size-select`)
+      if (sizeSelect) {
+        sizeSelect.addEventListener("change", updatePizzaPrice)
+      }
+    }
   })
 }
 
-// Add to cart function
+function updatePizzaPrice(event) {
+  const selectElement = event.target
+  const itemId = Number.parseInt(selectElement.dataset.id)
+  const sizeIndex = Number.parseInt(selectElement.value)
+  const pizza = pizzas.find((p) => p.id === itemId)
+
+  if (pizza && pizza.sizes && pizza.sizes[sizeIndex]) {
+    const newPrice = (pizza.price * pizza.sizes[sizeIndex].priceMultiplier).toFixed(2)
+    const priceElement = selectElement.closest(".pizza-item").querySelector(".pizza-price")
+    if (priceElement) {
+      priceElement.textContent = `${newPrice} zł`
+    }
+  }
+}
+
 function addToCart(event) {
   const itemId = Number.parseInt(event.target.dataset.id)
   const itemType = event.target.dataset.type
@@ -250,69 +335,86 @@ function addToCart(event) {
 
   const item = itemsArray.find((i) => i.id === itemId)
 
-  // Check if item is already in cart
-  const existingItem = cart.find((cartItem) => cartItem.id === itemId && cartItem.type === itemType)
+  // Handle pizza sizes
+  let selectedSize = null
+  let finalPrice = item.price
+  let sizeName = ""
 
-  if (existingItem) {
-    existingItem.quantity++
+  if (itemType === "pizza" && item.sizes) {
+    const sizeSelect = event.target.closest(".pizza-item").querySelector(".size-select")
+    if (sizeSelect) {
+      const sizeIndex = Number.parseInt(sizeSelect.value)
+      selectedSize = sizeIndex
+      finalPrice = item.price * item.sizes[sizeIndex].priceMultiplier
+      sizeName = item.sizes[sizeIndex].name
+    }
+  }
+
+  // Check if the same item with the same size is already in the cart
+  const existingItemIndex = cart.findIndex(
+    (cartItem) => cartItem.id === itemId && cartItem.type === itemType && cartItem.selectedSize === selectedSize,
+  )
+
+  if (existingItemIndex !== -1) {
+    cart[existingItemIndex].quantity++
   } else {
     cart.push({
       id: item.id,
       name: item.name,
-      price: item.price,
+      price: finalPrice,
       image: item.image,
       type: item.type,
       quantity: 1,
+      selectedSize: selectedSize,
+      sizeName: sizeName,
     })
   }
 
   updateCart()
-
-  // Show cart
   cartContainer.classList.add("active")
 }
 
-// Update cart display
 function updateCart() {
-  // Update cart count
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0)
   cartCount.textContent = totalItems
 
-  // Update cart items
   if (cart.length === 0) {
     cartItems.innerHTML = '<div class="empty-cart">Twój koszyk jest pusty</div>'
   } else {
     cartItems.innerHTML = ""
 
-    cart.forEach((item) => {
+    cart.forEach((item, index) => {
       const cartItemElement = document.createElement("div")
       cartItemElement.classList.add("cart-item")
 
+      let itemName = item.name
+      if (item.type === "pizza" && item.sizeName) {
+        itemName = `${item.name} - ${item.sizeName}`
+      }
+
       cartItemElement.innerHTML = `
-                <img src="${item.image}" alt="${item.name}" class="cart-item-img">
-                <div class="cart-item-details">
-                    <div class="cart-item-name">${item.name}</div>
-                    <div class="cart-item-price">${item.price.toFixed(2)} zł</div>
-                    <div class="cart-item-controls">
-                        <button class="quantity-btn decrease" data-id="${item.id}" data-type="${item.type}">-</button>
-                        <span class="cart-item-quantity">${item.quantity}</span>
-                        <button class="quantity-btn increase" data-id="${item.id}" data-type="${item.type}">+</button>
-                    </div>
-                </div>
-                <button class="remove-item" data-id="${item.id}" data-type="${item.type}">
-                    <i class="fas fa-trash"></i>
-                </button>
-            `
+        <img src="${item.image}" alt="${itemName}" class="cart-item-img">
+        <div class="cart-item-details">
+          <div class="cart-item-name">${itemName}</div>
+          <div class="cart-item-price">${item.price.toFixed(2)} zł</div>
+          <div class="cart-item-controls">
+            <button class="quantity-btn decrease" data-index="${index}">-</button>
+            <span class="cart-item-quantity">${item.quantity}</span>
+            <button class="quantity-btn increase" data-index="${index}">+</button>
+          </div>
+        </div>
+        <button class="remove-item" data-index="${index}">
+          <i class="fas fa-trash"></i>
+        </button>
+      `
 
       cartItems.appendChild(cartItemElement)
     })
   }
 
-  // Update cart total
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
   cartTotal.textContent = `${total.toFixed(2)} zł`
 
-  // Add event listeners to cart item buttons
   const decreaseButtons = document.querySelectorAll(".decrease")
   const increaseButtons = document.querySelectorAll(".increase")
   const removeButtons = document.querySelectorAll(".remove-item")
@@ -330,53 +432,40 @@ function updateCart() {
   })
 }
 
-// Decrease quantity
 function decreaseQuantity(event) {
-  const itemId = Number.parseInt(event.target.dataset.id)
-  const itemType = event.target.dataset.type
-  const item = cart.find((item) => item.id === itemId && item.type === itemType)
+  const index = Number.parseInt(event.target.dataset.index)
 
-  if (item.quantity > 1) {
-    item.quantity--
+  if (cart[index].quantity > 1) {
+    cart[index].quantity--
   } else {
-    cart = cart.filter((item) => !(item.id === itemId && item.type === itemType))
+    cart.splice(index, 1)
   }
 
   updateCart()
 }
 
-// Increase quantity
 function increaseQuantity(event) {
-  const itemId = Number.parseInt(event.target.dataset.id)
-  const itemType = event.target.dataset.type
-  const item = cart.find((item) => item.id === itemId && item.type === itemType)
-
-  item.quantity++
+  const index = Number.parseInt(event.target.dataset.index)
+  cart[index].quantity++
   updateCart()
 }
 
-// Remove item
 function removeItem(event) {
-  const itemId = Number.parseInt(event.target.closest(".remove-item").dataset.id)
-  const itemType = event.target.closest(".remove-item").dataset.type
-  cart = cart.filter((item) => !(item.id === itemId && item.type === itemType))
+  const index = Number.parseInt(event.target.closest(".remove-item").dataset.index)
+  cart.splice(index, 1)
   updateCart()
 }
 
-// Tab switching
 function switchTab() {
   const tabId = this.getAttribute("data-tab")
 
-  // Remove active class from all tabs and contents
   tabs.forEach((tab) => tab.classList.remove("active"))
   tabContents.forEach((content) => content.classList.remove("active"))
 
-  // Add active class to current tab and content
   this.classList.add("active")
   document.getElementById(`${tabId}-menu`).classList.add("active")
 }
 
-// Event Listeners
 cartIcon.addEventListener("click", () => {
   cartContainer.classList.add("active")
 })
@@ -387,7 +476,7 @@ closeCart.addEventListener("click", () => {
 
 checkoutBtn.addEventListener("click", () => {
   if (cart.length > 0) {
-    window.location.href = 'formularz_zamowienia_pizza.html'
+    window.location.href = "formularz_zamowienia_pizza.html"
     cart = []
     updateCart()
     cartContainer.classList.remove("active")
@@ -400,13 +489,11 @@ tabs.forEach((tab) => {
   tab.addEventListener("click", switchTab)
 })
 
-// Initialize
 function init() {
   displayItems(pizzas, pizzaMenu, "pizza")
   displayItems(drinks, drinksMenu, "drink")
   displayItems(appetizers, appetizersMenu, "appetizer")
 
-  // Add event listeners to "Add to Cart" buttons
   document.addEventListener("click", (event) => {
     if (event.target.classList.contains("add-to-cart")) {
       addToCart(event)
@@ -416,5 +503,4 @@ function init() {
   updateCart()
 }
 
-// Run initialization when DOM is fully loaded
 document.addEventListener("DOMContentLoaded", init)
