@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja – Pizzeria Neapol</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="side-decoration left-decoration"></div>
+    <div class="side-decoration right-decoration"></div>
+    
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo-link">
+                <h1>Pizzeria Neapol</h1>
+            </a>
+            <div class="header-buttons">
+                <a href="login.html" class="auth-link">
+                    <i class="fas fa-sign-in-alt"></i> Logowanie
+                </a>
+                <div class="cart-icon-container">
+                    <div id="cart-icon" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <div class="auth-logo">
+                        <i class="fas fa-pizza-slice"></i>
+                    </div>
+                    <h2>Rejestracja</h2>
+                    <p>Utwórz konto, aby zamawiać szybciej</p>
+                </div>
+
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Imię i nazwisko</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Adres e-mail</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Numer telefonu</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" required>
+                            <label for="password">Hasło</label>
+                            <button type="button" class="toggle-password" tabindex="-1">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <label for="confirmPassword">Powtórz hasło</label>
+                            <button type="button" class="toggle-password" tabindex="-1">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Akceptuję <a href="#">regulamin</a> i <a href="#">politykę prywatności</a></label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Chcę otrzymywać informacje o promocjach i nowościach</label>
+                    </div>
+
+                    <button type="submit" class="auth-button">
+                        <i class="fas fa-user-plus"></i> Zarejestruj się
+                    </button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Masz już konto? <a href="login.html">Zaloguj się</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

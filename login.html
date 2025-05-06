@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie – Pizzeria Neapol</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="side-decoration left-decoration"></div>
+    <div class="side-decoration right-decoration"></div>
+    
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo-link">
+                <h1>Pizzeria Neapol</h1>
+            </a>
+            <div class="header-buttons">
+                <a href="register.html" class="auth-link">
+                    <i class="fas fa-user-plus"></i> Rejestracja
+                </a>
+                <div class="cart-icon-container">
+                    <div id="cart-icon" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <div class="auth-logo">
+                        <i class="fas fa-pizza-slice"></i>
+                    </div>
+                    <h2>Logowanie</h2>
+                    <p>Zaloguj się, aby kontynuować</p>
+                </div>
+
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Adres e-mail</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" required>
+                            <label for="password">Hasło</label>
+                            <button type="button" class="toggle-password" tabindex="-1">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Zapamiętaj mnie</label>
+                        <a href="#" class="forgot-password">Zapomniałeś hasła?</a>
+                    </div>
+
+                    <button type="submit" class="auth-button">
+                        <i class="fas fa-sign-in-alt"></i> Zaloguj się
+                    </button>
+                </form>
+
+                <div class="social-login">
+                    <p>Lub zaloguj się przez:</p>
+                    <div class="social-buttons">
+                        <button class="social-button facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button class="social-button google">
+                            <i class="fab fa-google"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Nie masz konta? <a href="register.html">Zarejestruj się</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

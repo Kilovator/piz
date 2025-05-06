@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Neapol</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="side-decoration left-decoration"></div>
+    <div class="side-decoration right-decoration"></div>
+    <div class="container">
+        <header>
+            <h1>Pizzeria Neapol</h1>
+            <a href="profile.html">
+            <button  class="user-menu-button"> 
+                <i class="fas fa-user-circle"></i>
+                <span id="userName">Jan Kowalski</span>
+                </a>
+                
+            </button>
+            <div class="cart-icon-container">
+                <div id="cart-icon" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count" class="cart-count">0</span>
+                </div>
+            </div>
+            
+
+        </header>
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content right-aligned">
+                        <h2>Świeże, gorące i pyszne</h2>
+                        <br>
+                        <p<style: font-size: 10px;>Zamów swoją ulubioną pizzę online z dostawą lub odbiorem osobistym</p>
+                      </div>
+                </div>
+        </main>
+        <br></br>
+        <div class="tabs">
+            <div class="tab active" data-tab="pizza">Pizza</div>
+            <div class="tab" data-tab="drinks">Napoje</div>
+            <div class="tab" data-tab="appetizers">Przystawki</div>
+        </div>
+        <div class="tab-content active" id="pizza-menu"></div>
+        <div class="tab-content" id="drinks-menu"></div>
+        <div class="tab-content" id="appetizers-menu"></div>
+
+        <div id="cart-container" class="cart-container">
+            <div class="cart-header">
+                <h2>Koszyk</h2>
+                <button id="close-cart" class="close-cart">&times;</button>
+            </div>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Razem:</span>
+                    <span id="cart-total">0.00 zł</span>
+                </div>
+                <button id="checkout-btn" class="checkout-btn">Zamówić</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

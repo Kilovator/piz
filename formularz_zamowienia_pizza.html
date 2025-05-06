@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zamów pizzę – Pizzeria Neapol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #fefefe; }
+        h1 { color: #d35400; }
+        form { background-color: #fff; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+        .radio-group { display: flex; gap: 20px; margin-top: 5px; }
+        .radio-group input { width: auto; }
+        button { margin-top: 20px; padding: 12px 25px; background-color: #e67e22; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+        button:hover { background-color: #d35400; }
+        
+    </style>
+</head>
+<body>
+
+<h1>Zamów pizzę</h1>
+<form action="#" method="POST">
+    <label for="name">Imię i nazwisko:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">Numer telefonu:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="email">Adres e-mail (opcjonalnie):</label>
+    <input type="email" id="email" name="email">
+
+    <label for="delivery_type">Sposób dostarczenia:</label>
+    <div class="radio-group">
+        <label><input type="radio" name="delivery_type" value="dostawa" required> Dostawa</label>
+        <label><input type="radio" name="delivery_type" value="odbiór" required> Odbiór osobisty</label>
+    </div>
+
+    <label for="address">Adres dostawy (jeśli wybrano dostawę):</label>
+    <textarea id="address" name="address" rows="3" placeholder="Ulica, numer, miasto, kod pocztowy"></textarea>
+
+    <label for="notes">Dodatkowe uwagi:</label>
+    <textarea id="notes" name="notes" rows="3" placeholder="Np. bez rukoli, proszę o ostre sosy..."></textarea>
+
+    <button type="submit">Złóż zamówienie</button>
+    
+
+</form>
+
+</body>
+</html>
