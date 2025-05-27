@@ -101,7 +101,7 @@ const pizzas = [
     name: "Mexican",
     description: "Sos pomidorowy, mozzarella, oliwki, papryka, salami, peczarki, pomidory",
     price: 38.99,
-    image: "https://sushiholl.com.ua/wp-content/uploads/pizza-suprema.jpg",
+    image: "https://ca-times.brightspotcdn.com/dims4/default/3595dad/2147483647/strip/true/crop/1023x682+1+0/resize/1440x960!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F5b%2F1a%2Fc2b358643e7f43a851bd860a2f1b%2Fla-dd-even-more-easy-and-quick-dinner-recipes-076",
     type: "pizza",
     sizes: [
       { name: "Mała (25cm)", priceMultiplier: 0.8 },
@@ -368,7 +368,7 @@ function addToCart(event) {
     }
   }
 
-  // Check if the same item with the same size is already in the cart
+
   const existingItemIndex = cart.findIndex(
     (cartItem) => cartItem.id === itemId && cartItem.type === itemType && cartItem.selectedSize === selectedSize,
   )
@@ -474,15 +474,12 @@ function removeItem(event) {
   updateCart()
 }
 
-// Исправляем обработчики событий для вкладок
 function switchTab() {
   const tabId = this.getAttribute("data-tab")
 
-  // Удаляем активный класс со всех вкладок и контента
   tabs.forEach((tab) => tab.classList.remove("active"))
   tabContents.forEach((content) => content.classList.remove("active"))
 
-  // Добавляем активный класс выбранной вкладке и соответствующему контенту
   this.classList.add("active")
   document.getElementById(`${tabId}-menu`).classList.add("active")
 }
@@ -506,22 +503,20 @@ checkoutBtn.addEventListener("click", () => {
   }
 })
 
-// Исправляем функцию инициализации
+
 function init() {
   displayItems(pizzas, pizzaMenu, "pizza")
   displayItems(drinks, drinksMenu, "drink")
   displayItems(appetizers, appetizersMenu, "appetizer")
 
-  // Добавляем обработчики событий для вкладок
   tabs.forEach((tab) => {
     tab.addEventListener("click", switchTab)
   })
 
-  // Добавляем обработчики для кнопок "Добавить в корзину"
+ 
   document.addEventListener("click", (event) => {
     const target = event.target
 
-    // Проверяем, является ли элемент или его родитель кнопкой добавления в корзину
     const addToCartButton = target.closest(".add-to-cart")
     if (addToCartButton) {
       addToCart({ target: addToCartButton })
