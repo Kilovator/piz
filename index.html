@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="footer.css">
+
 </head>
 <body>
     <div class="side-decoration left-decoration"></div>
@@ -25,8 +27,6 @@
                         </button>
                         <div class="user-dropdown">
                             <a href="profile.html"><i class="fas fa-user"></i> Mój profil</a>
-                            <a href="orders.html"><i class="fas fa-list"></i> Moje zamówienia</a>
-                            <a href="addresses.html"><i class="fas fa-map-marker-alt"></i> Moje adresy</a>
                             <a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Wyloguj</a>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                     <div class="hero-content right-aligned">
                         <h2>Świeże, gorące i pyszne</h2>
                         <br>
-                        <p<style: font-size: 10px;>Zamów swoją ulubioną pizzę online z dostawą lub odbiorem osobistym</p>
+                        <p style: font-size: 10px;>Zamów swoją ulubioną pizzę online z dostawą lub odbiorem osobistym</p>
                       </div>
                 </div>
         </main>
@@ -74,7 +74,20 @@
             </div>
         </div>
     </div>
+<div id="footer-container"></div>
 
+    <script src="script.js"></script>
+    <script src="mobile.js"></script>
+    <script>
+     
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+        });
+    </script>
     <script src="script.js"></script>
     <script src="auth.js"></script>
 </body>

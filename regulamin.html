@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regulamin – Pizzeria Neapol</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="footer.css">
+    <style>
+        .terms-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 50px;
+        }
+        
+        .terms-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .terms-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .terms-header p {
+            color: #aaa;
+            font-size: 1rem;
+            height: auto;
+        }
+        
+        .terms-section {
+            margin-bottom: 30px;
+        }
+        
+        .terms-section h2 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .terms-section p {
+            color: #ddd;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            height: auto;
+        }
+        
+        .terms-section ul {
+            color: #ddd;
+            margin-bottom: 15px;
+            margin-left: 20px;
+        }
+        
+        .terms-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .terms-date {
+            text-align: right;
+            color: #aaa;
+            font-style: italic;
+            margin-top: 30px;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background-color: #444;
+        }
+        
+        @media (max-width: 768px) {
+            .terms-container {
+                padding: 20px;
+                margin: 15px;
+            }
+            
+            .terms-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .terms-section h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="side-decoration left-decoration"></div>
+    <div class="side-decoration right-decoration"></div>
+    
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo-link">
+                <h1>Pizzeria Neapol</h1>
+            </a>
+            <div class="header-buttons">
+                <a href="login.html" class="auth-link">
+                    <i class="fas fa-sign-in-alt"></i> Logowanie
+                </a>
+                <a href="register.html" class="auth-link">
+                    <i class="fas fa-user-plus"></i> Rejestracja
+                </a>
+                <div class="cart-icon-container">
+                    <div id="cart-icon" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <a href="javascript:history.back()" class="back-button">
+            <i class="fas fa-arrow-left"></i> Powrót
+        </a>
+
+        <div class="terms-container">
+            <div class="terms-header">
+                <h1>Regulamin Pizzerii Neapol</h1>
+                <p>Prosimy o zapoznanie się z regulaminem przed złożeniem zamówienia</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>§1. Postanowienia ogólne</h2>
+                <p>1.1. Niniejszy regulamin określa zasady korzystania z serwisu internetowego Pizzeria Neapol, dostępnego pod adresem www.pizzerianeapol.pl.</p>
+                <p>1.2. Właścicielem serwisu jest Pizzeria Neapol Sp. z o.o. z siedzibą w Warszawie, ul. Przykładowa 123, 00-000 Warszawa, NIP: 000-000-00-00, REGON: 000000000, wpisana do rejestru przedsiębiorców Krajowego Rejestru Sądowego pod numerem KRS 0000000000.</p>
+                <p>1.3. Kontakt z Pizzerią Neapol jest możliwy za pośrednictwem:</p>
+                <ul>
+                    <li>adresu e-mail: kontakt@pizzerianeapol.pl</li>
+                    <li>telefonu: +48 123 456 789</li>
+                    <li>formularza kontaktowego dostępnego na stronie internetowej</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2>§2. Definicje</h2>
+                <p>2.1. Serwis – serwis internetowy dostępny pod adresem www.pizzerianeapol.pl.</p>
+                <p>2.2. Klient – osoba fizyczna, osoba prawna lub jednostka organizacyjna nieposiadająca osobowości prawnej, która korzysta z usług świadczonych przez Pizzerię Neapol.</p>
+                <p>2.3. Konto – zbiór danych przechowywanych w Serwisie oraz w systemie teleinformatycznym Pizzerii Neapol dotyczący danego Klienta oraz składanych przez niego Zamówień.</p>
+                <p>2.4. Zamówienie – oświadczenie woli Klienta składane za pomocą Formularza Zamówienia i zmierzające bezpośrednio do zawarcia Umowy Sprzedaży Produktów z Pizzerią Neapol.</p>
+                <p>2.5. Produkt – dostępna w Serwisie rzecz ruchoma będąca przedmiotem Umowy Sprzedaży między Klientem a Pizzerią Neapol.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>§3. Zasady korzystania z Serwisu</h2>
+                <p>3.1. Korzystanie z Serwisu jest możliwe pod warunkiem spełnienia przez system teleinformatyczny, z którego korzysta Klient, następujących minimalnych wymagań technicznych:</p>
+                <ul>
+                    <li>komputer, laptop lub inne urządzenie multimedialne z dostępem do Internetu</li>
+                    <li>dostęp do poczty elektronicznej</li>
+                    <li>przeglądarka internetowa: Mozilla Firefox w wersji 17.0 i wyższej lub Internet Explorer w wersji 10.0 i wyższej, Opera w wersji 12.0 i wyższej, Google Chrome w wersji 23.0. i wyższej, Safari w wersji 5.0 i wyższej</li>
+                    <li>zalecana minimalna rozdzielczość ekranu: 1024x768</li>
+                    <li>włączenie w przeglądarce internetowej możliwości zapisu plików Cookies oraz obsługi Javascript</li>
+                </ul>
+                <p>3.2. Klient zobowiązany jest do korzystania z Serwisu w sposób zgodny z prawem i dobrymi obyczajami mając na uwadze poszanowanie dóbr osobistych oraz praw autorskich i własności intelektualnej Pizzerii Neapol oraz osób trzecich.</p>
+                <p>3.3. Klient zobowiązany jest do wprowadzania danych zgodnych ze stanem faktycznym.</p>
+                <p>3.4. Klienta obowiązuje zakaz dostarczania treści o charakterze bezprawnym.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>§4. Warunki zawierania umowy sprzedaży</h2>
+                <p>4.1. Zawarcie Umowy Sprzedaży między Klientem a Pizzerią Neapol następuje po uprzednim złożeniu przez Klienta Zamówienia za pomocą Formularza zamówienia w Serwisie internetowym.</p>
+                <p>4.2. Ceny podane w Serwisie są podane w polskich złotych i są cenami brutto (uwzględniają podatek VAT).</p>
+                <p>4.3. Na końcową (ostateczną) kwotę do zapłaty przez Klienta składa się cena za Produkt oraz koszt dostawy (w tym opłaty za transport, dostarczenie i usługi pocztowe), o której Klient jest informowany na stronach Serwisu w trakcie składania Zamówienia, w tym także w chwili wyrażenia woli związania się Umową Sprzedaży.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>§5. Dostawa i płatność</h2>
+                <p>5.1. Dostawa Produktów dostępna jest na terytorium Rzeczypospolitej Polskiej.</p>
+                <p>5.2. Dostawa Produktów do Klienta jest odpłatna, chyba że Umowa Sprzedaży stanowi inaczej. Koszty dostawy Produktu (w tym opłaty za transport, dostarczenie i usługi pocztowe) są wskazywane Klientowi na stronach Serwisu internetowego w zakładce „Koszty dostawy" oraz w trakcie składania Zamówienia, w tym także w chwili wyrażenia przez Klienta woli związania się Umową Sprzedaży.</p>
+                <p>5.3. Pizzeria Neapol udostępnia Klientowi następujące sposoby płatności:</p>
+                <ul>
+                    <li>Płatność gotówką przy odbiorze</li>
+                    <li>Płatność kartą płatniczą przy odbiorze</li>
+                    <li>Płatność online przez system płatności elektronicznych</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2>§6. Reklamacja produktu</h2>
+                <p>6.1. Podstawa i zakres odpowiedzialności Pizzerii Neapol względem Klienta, jeżeli sprzedany Produkt ma wadę fizyczną lub prawną (rękojmia) są określone powszechnie obowiązującymi przepisami prawa, w szczególności w Kodeksie Cywilnym.</p>
+                <p>6.2. Reklamacja może zostać złożona przez Klienta:</p>
+                <ul>
+                    <li>pisemnie na adres: ul. Przykładowa 123, 00-000 Warszawa</li>
+                    <li>w formie elektronicznej za pośrednictwem poczty elektronicznej na adres: reklamacje@pizzerianeapol.pl</li>
+                    <li>telefonicznie pod numerem: +48 123 456 789</li>
+                </ul>
+                <p>6.3. Zaleca się podanie przez Klienta w opisie reklamacji: informacji i okoliczności dotyczących przedmiotu reklamacji, w szczególności rodzaju i daty wystąpienia wady; żądania sposobu doprowadzenia Produktu do zgodności z Umową Sprzedaży lub oświadczenia o obniżeniu ceny albo odstąpieniu od Umowy Sprzedaży; oraz danych kontaktowych składającego reklamację – ułatwi to i przyspieszy rozpatrzenie reklamacji przez Pizzerię Neapol.</p>
+                <p>6.4. Pizzeria Neapol ustosunkuje się do reklamacji Klienta niezwłocznie, nie później niż w terminie 14 dni kalendarzowych od dnia jej złożenia.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>§7. Dane osobowe</h2>
+                <p>7.1. Administratorem danych osobowych Klientów zbieranych za pośrednictwem Serwisu internetowego jest Pizzeria Neapol.</p>
+                <p>7.2. Dane osobowe Klientów zbierane przez administratora za pośrednictwem Serwisu internetowego zbierane są w celu realizacji Umowy Sprzedaży, a jeżeli Klient wyrazi na to zgodę - także w celu marketingowym.</p>
+                <p>7.3. Szczegółowe zasady przetwarzania danych osobowych Klientów określa Polityka Prywatności dostępna na stronie Serwisu.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>§8. Postanowienia końcowe</h2>
+                <p>8.1. Umowy zawierane poprzez Serwis zawierane są w języku polskim.</p>
+                <p>8.2. Pizzeria Neapol zastrzega sobie prawo do dokonywania zmian Regulaminu z ważnych przyczyn, to jest: zmiany przepisów prawa; zmiany sposobów płatności i dostaw - w zakresie, w jakim te zmiany wpływają na realizację postanowień niniejszego Regulaminu.</p>
+                <p>8.3. W sprawach nieuregulowanych w niniejszym Regulaminie mają zastosowanie powszechnie obowiązujące przepisy prawa polskiego, w szczególności: Kodeksu cywilnego; ustawy o świadczeniu usług drogą elektroniczną; ustawy o prawach konsumenta, ustawy o ochronie danych osobowych.</p>
+            </div>
+            
+            <div class="terms-date">
+                <p>Regulamin obowiązuje od dnia 20.05.2025</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Добавляем футер в конец страницы -->
+    <div id="footer-container"></div>
+    
+    <script src="mobile.js"></script>
+    <script>
+        // Загружаем футер
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>

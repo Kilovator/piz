@@ -1,0 +1,257 @@
+/* Мобильные стили для Pizzeria Neapol */
+
+/* Общие стили для мобильных устройств */
+@media (max-width: 768px) {
+    /* Базовые настройки */
+    body {
+      font-size: 14px;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    /* Скрываем боковые декорации на мобильных устройствах */
+    .side-decoration {
+      display: none;
+    }
+  
+    /* Шапка сайта */
+    header {
+      flex-direction: column;
+      gap: 15px;
+      padding: 10px 0;
+    }
+  
+    .header-buttons {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    /* Мобильное меню */
+    .mobile-menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 80%;
+      height: 100vh;
+      background-color: #1a1a1a;
+      z-index: 1000;
+      transition: left 0.3s ease;
+      padding: 20px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+    }
+  
+    .mobile-menu.active {
+      left: 0;
+    }
+  
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #333;
+    }
+  
+    .close-mobile-menu {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  
+    .mobile-menu-items {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .mobile-menu-item {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .mobile-menu-item i {
+      width: 20px;
+      color: #ff6b6b;
+    }
+  
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+  
+    .mobile-menu-overlay.active {
+      display: block;
+    }
+  
+    /* Вкладки меню */
+    .tabs {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .tab {
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+  
+    /* Сетка меню */
+    .tab-content.active {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  
+    /* Карточки товаров */
+    .pizza-item,
+    .drink-item,
+    .appetizer-item {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .pizza-img,
+    .drink-img,
+    .appetizer-img {
+      height: 150px;
+    }
+  
+    .pizza-info,
+    .drink-info,
+    .appetizer-info {
+      padding: 10px;
+    }
+  
+    /* Селектор размера */
+    .size-selector {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+  
+    .size-label {
+      margin-bottom: 5px;
+    }
+  
+    /* Корзина */
+    .cart-container {
+      width: 100%;
+      right: -100%;
+    }
+  
+    .cart-item {
+      flex-wrap: wrap;
+    }
+  
+    .cart-item-img {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .remove-item {
+      position: relative;
+      margin-top: 10px;
+      width: 100%;
+      text-align: right;
+    }
+  
+    /* Форма авторизации */
+    .auth-card {
+      padding: 20px;
+      margin: 10px;
+    }
+  
+    .auth-logo {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .auth-logo i {
+      font-size: 24px;
+    }
+  
+    .input-group input {
+      padding: 12px 12px 12px 40px;
+      font-size: 14px;
+    }
+  
+    .input-group i {
+      left: 12px;
+      font-size: 14px;
+    }
+  
+    .auth-button {
+      padding: 12px;
+      font-size: 14px;
+    }
+  
+    /* Форма заказа */
+    .form-container {
+      padding: 15px;
+    }
+  
+    .radio-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .radio-option {
+      padding: 10px;
+    }
+  
+    .button-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .button-group button {
+      width: 100%;
+    }
+  }
+  
+  /* Стили для очень маленьких экранов */
+  @media (max-width: 375px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .auth-header h2 {
+      font-size: 20px;
+    }
+  
+    .auth-card {
+      padding: 15px;
+    }
+  
+    .input-group input {
+      padding: 10px 10px 10px 35px;
+    }
+  }
+  

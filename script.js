@@ -270,8 +270,9 @@ function displayItems(items, container, itemType) {
     if (itemType === "pizza" && item.sizes) {
       itemHTML += `
         <div class="size-selector">
-          <label for="size-${item.id}">Rozmiar:</label>
-          <select id="size-${item.id}" class="size-select" data-id="${item.id}">
+          <div class="size-label">Rozmiar:</div>
+          <div class="custom-select">
+            <select id="size-${item.id}" class="size-select" data-id="${item.id}">
       `
 
       item.sizes.forEach((size, index) => {
@@ -280,16 +281,24 @@ function displayItems(items, container, itemType) {
       })
 
       itemHTML += `
-          </select>
+            </select>
+            <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
+          </div>
         </div>
-        <div class="${itemType}-price">${(item.price * item.sizes[1].priceMultiplier).toFixed(2)} zł</div>
+        <div class="${itemType}-price-container">
+          <div class="${itemType}-price">${(item.price * item.sizes[1].priceMultiplier).toFixed(2)} zł</div>
+        </div>
       `
     } else {
-      itemHTML += `<div class="${itemType}-price">${item.price.toFixed(2)} zł</div>`
+      itemHTML += `<div class="${itemType}-price-container">
+                    <div class="${itemType}-price">${item.price.toFixed(2)} zł</div>
+                   </div>`
     }
 
     // Add the add to cart button
-    itemHTML += `<button class="add-to-cart" data-id="${item.id}" data-type="${item.type}">Dodać do koszyka</button>`
+    itemHTML += `<button class="add-to-cart" data-id="${item.id}" data-type="${item.type}">
+                   <i class="fas fa-shopping-cart"></i> Dodać do koszyka
+                 </button>`
     itemHTML += `</div>`
 
     itemElement.innerHTML = itemHTML
@@ -315,11 +324,19 @@ function updatePizzaPrice(event) {
     const newPrice = (pizza.price * pizza.sizes[sizeIndex].priceMultiplier).toFixed(2)
     const priceElement = selectElement.closest(".pizza-item").querySelector(".pizza-price")
     if (priceElement) {
+      // Add animation class
+      priceElement.classList.add("price-update")
       priceElement.textContent = `${newPrice} zł`
+
+      // Remove animation class after animation completes
+      setTimeout(() => {
+        priceElement.classList.remove("price-update")
+      }, 500)
     }
   }
 }
 
+// Исправляем функцию добавления в корзину
 function addToCart(event) {
   const itemId = Number.parseInt(event.target.dataset.id)
   const itemType = event.target.dataset.type
@@ -334,6 +351,7 @@ function addToCart(event) {
   }
 
   const item = itemsArray.find((i) => i.id === itemId)
+  if (!item) return
 
   // Handle pizza sizes
   let selectedSize = null
@@ -456,12 +474,15 @@ function removeItem(event) {
   updateCart()
 }
 
+// Исправляем обработчики событий для вкладок
 function switchTab() {
   const tabId = this.getAttribute("data-tab")
 
+  // Удаляем активный класс со всех вкладок и контента
   tabs.forEach((tab) => tab.classList.remove("active"))
   tabContents.forEach((content) => content.classList.remove("active"))
 
+  // Добавляем активный класс выбранной вкладке и соответствующему контенту
   this.classList.add("active")
   document.getElementById(`${tabId}-menu`).classList.add("active")
 }
@@ -485,18 +506,25 @@ checkoutBtn.addEventListener("click", () => {
   }
 })
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", switchTab)
-})
-
+// Исправляем функцию инициализации
 function init() {
   displayItems(pizzas, pizzaMenu, "pizza")
   displayItems(drinks, drinksMenu, "drink")
   displayItems(appetizers, appetizersMenu, "appetizer")
 
+  // Добавляем обработчики событий для вкладок
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", switchTab)
+  })
+
+  // Добавляем обработчики для кнопок "Добавить в корзину"
   document.addEventListener("click", (event) => {
-    if (event.target.classList.contains("add-to-cart")) {
-      addToCart(event)
+    const target = event.target
+
+    // Проверяем, является ли элемент или его родитель кнопкой добавления в корзину
+    const addToCartButton = target.closest(".add-to-cart")
+    if (addToCartButton) {
+      addToCart({ target: addToCartButton })
     }
   })
 
